@@ -71,8 +71,8 @@ app.post("/add", (req, res) => {
 //update movements
 app.put("/update/:id", (req, res) => {
   const { id } = req.params;
-  const { concept, amount, type, date } = req.body;
-  const sql = `UPDATE moves SET concept = '${concept}', amount='${amount}', type='${type}', date='${date}' WHERE id =${id}`;
+  const { concept, amount, date } = req.body;
+  const sql = `UPDATE moves SET concept = '${concept}', amount='${amount}', date='${date}' WHERE id =${id}`;
 
   db.query(sql, (error) => {
     if (error) throw error;
